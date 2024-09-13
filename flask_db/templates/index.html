@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="image" />
+    <title>Main Page</title>
+    <style>
+      ul li {
+        display: inline-flex;
+      }
+      ul li a {
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 20px;
+        border: 1px solid transparent;
+        transition: 0.6s ease;
+      }
+      ul li a:hover {
+        background-color: #fff;
+        color: #000;
+      }
+      /* li{
+            display: inline;
+        } */
+      .nav-buttons {
+        position: fixed;
+        top: 20px; /* Atur jarak dari atas */
+        right: 20px; /* Atur jarak dari kanan */
+        flex-direction: row-reverse;
+      }
+
+      .nav-button {
+        padding: 10px 20px;
+        margin-left: 100px;
+        background-color: #007bff; /* Warna latar belakang tombol */
+        color: #fff; /* Warna teks tombol */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .nav-button:hover {
+        background-color: #0056b3; /* Warna latar belakang tombol saat dihover */
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <header>
+        <div class="nav">
+            <ul>
+              <li>
+                  <form action="{{ url_for('rules') }}" method="post">
+                    <button type="submit">Rules</button>
+                  </form>
+                  <form action="{{ url_for('aboutUs') }}" method="post">
+                    <button type="submit">About Us</button>
+                  </form>
+                  <form action="{{ url_for('logout') }}" method="post">
+                    <button type="submit">Back to Home</button>
+                  </form>  
+              </li>
+            </ul>
+          </div>      
+    </header>
+
+
+    <h1>Analyze your favourite airline!</h1>
+    <h3>Enter airline's name below</h3>
+    
+    <div class="container">
+      <br /><br />
+      <!-- <h3>Enter airline's name below</h3> -->
+      <form action="{{ url_for('finalResult') }}" method="post">
+        <!-- <label for="airlineName">Airline Name:</label>   URL_FOR(finalResult) -->
+        <input
+          type="text"
+          id="airlineName"
+          placeholder="type airline name here..."
+          name="airlineName"
+          required
+        />
+        <!-- <div>
+          <label for="selectSentiment"><h3>Choose a sentiment:</h3></label><br>
+          <select id="selectSentiment" name="selectSentiment">
+              <option value="positive">Positive</option>
+              <option value="negative">Negative</option>
+          </select>
+      </div> -->
+        <input
+          type="text"
+          id="selectSentiment"
+          name="selectSentiment"
+          placeholder="type Positive or Negative here..."
+          required
+        />
+
+        <button type="submit">Analyse</button>
+      </form>
+    </div>
+  </body>
+</html>

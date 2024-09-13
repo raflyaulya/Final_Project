@@ -1,0 +1,36 @@
+.container {
+    position: relative;
+    overflow: hidden;
+    /* Menyembunyikan bagian persegi yang melewati batas kontainer */
+}
+
+.square {
+    position: absolute;
+    right: 0;
+    top: 50%;
+
+    width: 200px;
+    height: 200px;
+    background-color: #6495ED;
+    margin-bottom: 20px;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #87CEEB;
+}
+
+button {
+    width: auto; 
+    padding: 10px; 
+    margin: 10px 0; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: #e71414; 
+    color: white; 
+    cursor: pointer; 
+}

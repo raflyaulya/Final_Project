@@ -1,0 +1,58 @@
+body {
+    /* background-image: url("{{ url_for('static',filename='images/airlineBackground.png') }} "); */
+    background-image: url(airlineBackground.png);
+    /* background-color: transparent; */
+    backdrop-filter: blur(10px);
+    background-size: cover;
+    background-position: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.back-to-main-button {
+    display: inline-block;
+    margin-top: 10px;
+    /* Mengatur jarak antara teks dan tombol */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-to-main-button:hover {
+    background-color: #0056b3;
+}
+
+.text-container {
+    text-align: center;
+}
+
+/* .square {
+    position: absolute;
+    right: 0;
+    top: 50%;
+
+    width: 200px;
+    height: 200px;
+    background-color: #6495ED;
+    margin-bottom: 20px;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #87CEEB;
+} */

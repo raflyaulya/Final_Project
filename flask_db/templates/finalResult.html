@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="{{url_for('static', filename='css/finalResult.css')}}"
+  />
+    <title>Result Page</title>
+</head>
+<body>
+    <!-- <h1>This is the Final Result of Negative {{airlineName}}</h1>{{airlineName}}
+
+    <div>
+      {{ result_negative }}
+    </div>  -->
+    <div class="container">
+    <div class="square"></div>
+    <div class="triangle"></div>
+    
+    </div>
+    
+    <div class="airline-name">
+      <h1>Airline's name: {{ res_airlineName }}</h1>
+    <br>
+    </div>
+    
+    <!-- <h1>Sentiment choosen: {{selectSentiment}}</h1> -->
+
+    <h1>Description of {{ selectSentiment }} reviews</h1><br>
+    <div>
+      {{ res_sentiment }}
+    </div> 
+    <br><br>
+
+    
+    <!-- <h1>Result of Data Visualization: BAR Chart</h1>
+    <img src="data:image/png;base64,{{ plots[1] }}" alt="Bar Chart">
+    <br> -->
+    
+    <h1>Result of Data Visualization: PIE Chart</h1>
+    <img src="data:image/png;base64,{{ plots[2] }}" alt="Pie Chart">
+
+    <h1>Word Frequency Plot</h1>
+    <img src="data:image/png;base64, {{ plots[0] }}" alt="Word Frequency Plot"> <br><br>
+
+    <p>
+    
+        Word Frequency Analysis for {{ selectSentiment }} reviews: <br>
+        {% if selectSentiment == 'positive' or 'Positive' %}
+          From the generated word frequency plot, it is evident that words such as
+          {% for i in range(6) %}
+            {% if i == 0 %}
+              "{{ words[i] }}"
+            {% else %}
+              , "{{ words[i] }}"
+            {% endif %}
+          {% endfor %}
+          appear with the highest frequency. This indicates that topics related to the flight experience, 
+          whether it be service, airport facilities, or the airline experience, are the primary focus of customer reviews.
+        {% elif selectSentiment == 'negative' or 'Negative' %}
+          Upon examining the word frequency plot, it becomes apparent that words such as
+          {% for i in range(3,9) %}
+            {% if i == 0 %}
+              "{{ words[i] }}"
+            {% else %}
+              , "{{ words[i] }}"
+            {% endif %}
+          {% endfor %}
+          emerge as the most frequent. These terms signify recurring problems and grievances expressed by customers, 
+          indicating significant dissatisfaction with various aspects of their flight experiences.
+        {% endif %}
+      
+
+
+      <!-- Word Frequency Analysis for {{ selectSentiment }} reviews: <br>
+      Key Patterns: <br>
+      From the generated word frequency plot, it is evident that words such as
+      {% for i in range(5) %}
+      {% if i == 0 %}
+        "{{ words[i] }}"
+      {% else %}
+        , "{{ words[i] }}"
+      {% endif %}
+    {% endfor %}
+      
+      appear with the highest frequency. This indicates that topics related to the flight experience, 
+       whether it be service, airport facilities, or the airline experience, are the primary focus of customer reviews. -->
+
+      
+      <!-- {{words[:5]}}
+      {% for word in words %}
+        - {{word}}, which appears {{frequencies[loop.index]}} times.  ==========
+        - {{word[:5]}},
+      {% endfor %}. -->
+       
+    
+    </p>
+
+    <br><br>
+
+    <button type="submit">
+    <a href="{{ url_for('index') }}">Back to Main Page</a>
+    </button>
+    <footer>Footer</footer>
+</body>
+</html>

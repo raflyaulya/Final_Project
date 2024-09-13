@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/aboutUsStyle.css')}}"
+    />
+    <title>About Us</title>
+  </head>
+  <body>
+    <div class="square"></div>
+    <div class="triangle"></div>
+
+    <div class="text-container">
+      <h1>ABOUT US</h1>
+      <p>
+        <span class="bold-text">
+          <br />
+          <h4>
+            Welcome to our site!
+            <br />
+            We are a dedicated team passionate about technology and data
+            analysis. Our project, "Development of a Web Application for
+            Analyzing Airline Customer Reviews Using Web Scraping and Data
+            Visualization Methods," aims to provide deep insights and
+            visualizations of airline customer reviews to help companies improve
+            their service quality and customer satisfaction.
+
+            <br /><br />Our Mission <br />
+            Our goal is to create a tool that
+            enables airlines and their customers to better understand each other
+            by offering valuable insights and clear data visualizations for
+            informed decision-making and enhanced service experiences.
+
+            <br /><br />Technologies We Use <br />
+            - Programming Language: Python - for web scraping, data analysis,
+            and processing. <br />
+            - Framework: Flask - for building a flexible and reliable web
+            application. <br />
+            - Development Environment: Visual Studio Code - for writing,
+            testing, and debugging code. <br />
+            - Data Analysis Libraries: Pandas, Numpy, NLTK - for processing and
+            analyzing reviews. <br />
+            - Data Visualization Libraries: Matplotlib, Seaborn - for creating
+            clear and insightful graphs and charts. <br />
+
+            <br /><br />What We Offer <br />
+            Our web application allows you to: <br />
+            - Collect customer reviews from various online sources. <br />
+            - Analyze text data to identify key themes and sentiments. <br />
+            - Visualize analysis results in an accessible and understandable
+            format. <br />
+
+            We believe our project will help airlines improve their services and
+            customers enjoy better experiences. Thank you for visiting our site,
+            and we hope our tool will be useful to you. <br />
+
+            <br /><br />Contact Us <br />
+            If you have any questions, suggestions, or feedback, please get in
+            touch with us through the contact form on our site. We are always
+            open to new ideas and collaborations!
+          </h4>
+          <p></p>
+        </span>
+      </p>
+
+      <a href="{{ url_for('index') }}" class="back-to-main-button"
+        >Back to Main Page</a
+      >
+    </div>
+  </body>
+</html>
